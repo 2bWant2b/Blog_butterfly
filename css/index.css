@@ -3116,6 +3116,39 @@ blockquote footer cite:before {
     transform: scale(0.7);
   }
 }
+.cbp_tmlabel:after {
+  border-right-color: transparent !important;
+}
+#artitalk_main .cbp_tmtimeline > li .cbp_tmlabel {
+  display: inline-block !important;
+  margin: 0 0 30px 0px !important;
+}
+#artitalk_main .cbp_tmtimeline > li .cbp_tmlabel:after {
+  border-right-color: transparent !important;
+}
+.artitalk_avatar {
+  width: 40px;
+  height: 40px;
+}
+span.shuoshuo_author_img {
+  display: none;
+}
+.power {
+  display: none;
+  padding: 10px !important;
+  text-align: left !important;
+}
+#switchUser,
+#pubShuo,
+#pubComment,
+#uploadSource {
+  padding-right: 10px !important;
+}
+#uploadSource .icon {
+  width: 1.2em !important;
+  height: 1.2em !important;
+  vertical-align: 0 !important;
+}
 #post-comment .comment-head {
   margin-bottom: 1rem;
 }
@@ -4693,6 +4726,70 @@ _:future,
 @media screen and (max-width: 900px) {
   #rightside #hide-aside-btn {
     display: none;
+  }
+}
+@font-face {
+  font-family: 'UnidreamLED';
+  src: url("https://cdn.jsdelivr.net/gh/Akilarlxh/Akilarlxh.github.io@v3.3.3_3/clock/fonts/UnidreamLED.ttf");
+  font-display: swap;
+}
+div#runtime {
+  width: 180px;
+  margin: auto;
+  color: #fff;
+  padding-inline: 5px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.7);
+  font-family: 'UnidreamLED';
+}
+[data-theme="dark"] div#runtime {
+  color: #28b4c8;
+  -webkit-box-shadow: 0 0 5px rgba(28,69,218,0.71);
+  box-shadow: 0 0 5px rgba(28,69,218,0.71);
+  -webkit-animation: flashlight 1s linear infinite alternate;
+  -moz-animation: flashlight 1s linear infinite alternate;
+  -o-animation: flashlight 1s linear infinite alternate;
+  -ms-animation: flashlight 1s linear infinite alternate;
+  animation: flashlight 1s linear infinite alternate;
+}
+@-moz-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-webkit-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-o-keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@keyframes flashlight {
+  from {
+    -webkit-box-shadow: 0 0 5px #1478d2;
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    -webkit-box-shadow: 0 0 2px #1478d2;
+    box-shadow: 0 0 2px #1478d2;
   }
 }
 #sidebar #menu-mask {
