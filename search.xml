@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>mermaid用法</title>
+      <link href="2021/02/21/mermaid%E7%94%A8%E6%B3%95/"/>
+      <url>2021/02/21/mermaid%E7%94%A8%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>在纯 <strong>markdown</strong> 语法和博客中写mermaid是有区别的， <strong>markdown</strong> 中是和写代码块一样，把种类写成 <strong>mermaid</strong> 就好。而在博客中是写上<code>&#123;% mermaid %&#125;内容&#123;% endmermaid %&#125;</code>，这个能在网页显示却不能在编辑器上显示。本文只记录常用语法，详情参照<a href="https://mermaid-js.github.io/mermaid/#/">官方文档</a></p></blockquote><h2 id="流程图">流程图</h2><p>TD表示从上到下，也可以写成LR从左到右</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">graph TD;</span><br><span class="line">    A--yes--&gt;B;</span><br><span class="line">    A--&gt;C;</span><br><span class="line">    B--&gt;D;</span><br><span class="line">    C--&gt;D;</span><br></pre></td></tr></table></figure><div class="mermaid">graph TD;    A--yes--&gt;B;    A--&gt;C;    B--&gt;D;    C--&gt;D;</div><h2 id="饼图">饼图</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line">title 饼图</span><br><span class="line">    &quot;A&quot;:40</span><br><span class="line">    &quot;B&quot;:20</span><br><span class="line">    &quot;C&quot;:10</span><br><span class="line">    &quot;D&quot;:30</span><br></pre></td></tr></table></figure><div class="mermaid">pietitle 饼图    &quot;A&quot;:40    &quot;B&quot;:20    &quot;C&quot;:10    &quot;D&quot;:30</div>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> mermaid </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>超密集网络学习笔记</title>
       <link href="2021/02/14/%E8%B6%85%E5%AF%86%E9%9B%86%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
       <url>2021/02/14/%E8%B6%85%E5%AF%86%E9%9B%86%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
