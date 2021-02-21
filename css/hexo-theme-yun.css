@@ -1956,6 +1956,25 @@ body::before {
 #say #say-from {
   display: block;
 }
+.notice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Songti SC', 'Noto Serif SC', STZhongsong, STKaiti, KaiTi, Roboto, serif;
+  font-weight: bold;
+  padding: 1rem;
+  margin: 1rem auto;
+  border: 1px solid #000;
+  max-width: calc(900px - 2rem);
+  background-color: rgba(255,255,255,0.3);
+}
+@media screen and (max-width: 768px) {
+  .notice {
+    border-left-width: 0px;
+    border-right-width: 0px;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --color-mode: 'dark';
@@ -1987,7 +2006,7 @@ body::before {
   }
   :root:not([data-user-color-scheme]) .sidebar {
     background-color: rgba(27,31,46,0.95);
-    background-image: none;
+    background-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn@master/img/bg/dark-alpha-stars-timing-1.webp");
   }
   :root:not([data-user-color-scheme]) .post-title-link {
     color: #3ca1ff;
@@ -2063,7 +2082,7 @@ body::before {
 }
 [data-user-color-scheme='dark'] .sidebar {
   background-color: rgba(27,31,46,0.95);
-  background-image: none;
+  background-image: url("https://cdn.jsdelivr.net/gh/YunYouJun/cdn@master/img/bg/dark-alpha-stars-timing-1.webp");
 }
 [data-user-color-scheme='dark'] .post-title-link {
   color: #3ca1ff;
@@ -2110,4 +2129,57 @@ body::before {
 }
 [data-user-color-scheme='dark'] .aplayer {
   color: #000;
+}
+#girls {
+  text-align: center;
+}
+.girls-number {
+  color: #fff;
+}
+.girl-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+}
+.girl-item {
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  width: 8rem;
+  margin: 1rem;
+}
+.girl-item .girl-info {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.girl-item .girl-avatar {
+  object-fit: cover;
+  object-position: center top;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  background-color: #fff;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.12);
+  transition: 0.5s;
+}
+.girl-item .girl-avatar:hover {
+  box-shadow: 0 0 2rem rgba(0,0,0,0.12);
+}
+.girl-item .girl-name {
+  font-size: 0.9rem;
+}
+.girl-item .girl-from {
+  font-size: 12px;
+  font-family: 'Songti SC', 'Noto Serif SC', STZhongsong, STKaiti, KaiTi, Roboto, serif;
+  font-weight: bold;
+  color: var(--hty-secondary-text-color);
+}
+.girl-item .girl-from::before {
+  content: '「';
+}
+.girl-item .girl-from::after {
+  content: '」';
 }
