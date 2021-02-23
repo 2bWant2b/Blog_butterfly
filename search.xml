@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>关于Git推送出Failed connects的问题</title>
+      <link href="2021/02/22/%E5%85%B3%E4%BA%8EGit%E6%8E%A8%E9%80%81%E5%87%BAFailed-connects%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>2021/02/22/%E5%85%B3%E4%BA%8EGit%E6%8E%A8%E9%80%81%E5%87%BAFailed-connects%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题描述">问题描述</h2><p>有时通过Git推送时会出现<code>github|fatal:unable to access|OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.co...</code>这样奇怪的报错</p><h2 id="解决方案">解决方案</h2><p>这时我们可以在git bash中敲命令<code>git config --global --unset http.proxy</code>以取消代理，虽然我也没设置代理但是它就是这么奇怪。这样问题就解决了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 问题解决 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Flutter学习笔记（二）</title>
       <link href="2021/02/22/Flutter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
       <url>2021/02/22/Flutter%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BA%8C%EF%BC%89/</url>
