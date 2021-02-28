@@ -38,12 +38,14 @@
       
       <categories>
           
-          <category> 问题解决 </category>
+          <category> 开发文档 </category>
           
       </categories>
       
       
         <tags>
+            
+            <tag> 问题解决 </tag>
             
             <tag> Github </tag>
             
