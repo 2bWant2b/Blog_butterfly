@@ -1,540 +1,65 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="2bW"><meta name="copyright" content="2bW"><meta name="generator" content="Hexo 5.3.0"><meta name="theme" content="hexo-theme-yun"><title>个人介绍 | 2bWant2b</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/sky.css"></head><body><div class="reveal"><div class="slides"><section data-markdown data-separator="---" data-separator-vertical="~~" data-separator-notes="^Note:"><script type="text/template">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-
-<!-- 6-最后一节课讲解数据来源，数据质量，数据清洗过程，实现细节，创意设计，可以准备 PPT，互评打分（给每个同学打分，不给自己和同组的同学打分，60%分值） -->
-
-## Color Dust
-
-![color.svg](https://www.yunyoujun.cn/color-dust/color.svg)
-
-<small>
-色尘，佛教语。“六尘”之一。
-
-即眼根（视觉）所触及的尘境。
-</small>
-
-[out](https://2bwant2b.github.io/)
----
-
-> 色尘知有数，劫烬岂无年。  
-> —— 唐·李绅《题法华寺》
-
----
-
-## 数据来源
-
-<i class="ri-image-line" style="font-size: 6rem;"></i>
-
-~~
-
-## 图片即数据
-
-> 像素 =>
-> <span style="color:red">R</span> <span style="color:green">G</span> <span style="color:blue">B</span>
-
-### <i class="ri-file-upload-line"></i>
-
-```js
-new FileReader();
-```
-
-### <i class="ri-links-line"></i>
-
-```js
-new XMLHttpRequest();
-```
-
-Note: 图片便是数据的一种表现形式，一张图片往往相比文本蕴藏着海量的数据。通过上传文件或链接去请求加载图片。
-
-~~
-
-## 随机图片
-
-<i class="ri-gallery-line"></i>
-
-测试数据，在线切换
-
-Note: 我也准备了一些随机图片，届时可以点击切换效果。
-
----
-
-## 数据清洗
-
-<i class="ri-drop-line" style="font-size: 6rem;"></i>
-
-~~
-
-### Canvas 图片像素
-
-```js
-...
-for (let row = 1; row < imageData.height - 1; ) {
-  for (let col = 1; col < imageData.width - 1; ) {
-    r = imageData.data[row * imageData.width * 4 + col * 4]
-    g = imageData.data[row * imageData.width * 4 + col * 4 + 1]
-    b = imageData.data[row * imageData.width * 4 + col * 4 + 2]
-    hsl = rgbToHsl(r, g, b)
-    ...
-  }
-}
-```
-
-RGB <i class="ri-arrow-left-right-line"></i> HSL
-
-H 色相、S 饱和度、L 明度
-
-Note: 使用 Canvas 读取图片像素，便可以获得 RGB 的信息，我们可以再将其转换为 HSL 以供后续使用。
-
-~~
-
-## <i class="ri-contrast-drop-line"></i>
-
-忽略太亮/太暗
-
-```js
-if (hsl[2] > 97 || (hsl[2] > 95 && hsl[1] < 30)) {
-  col += pixelStep;
-  continue; // too bright
-}
-if (hsl[2] < 3 || (hsl[2] < 5 && hsl[1] < 30)) {
-  col += pixelStep;
-  continue; // too dark
-}
-```
-
-Note: 照盘全收没有必要，去除无用的信息。
-
-~~
-
-## K-Means
-
-K = 6
-
-挑选 K 个初始种子（忽略差距过小的颜色）
-
-<i class="ri-seedling-line"></i>
-
-```js
-for (j = 0; j < l; j++) {
-  const hDiff = Math.abs(initSeed[j].h - color.h);
-  const sDiff = Math.abs(initSeed[j].s - color.s);
-  const lDiff = Math.abs(initSeed[j].l - color.l);
-  if (hDiff + sDiff + lDiff < 45) {
-    break;
-  }
-}
-```
-
-Note: 我这里并没有使用相关的类库，这有利于进行更加细粒化的操作。开始记录相关信息（迭代次数、时间、颜色数量）
-
-~~
-
-## 分类
-
-<i class="ri-leaf-line"></i>
-
-```js
-while (len--) {
-  const distance =
-    Math.abs(classes[len].h - color.h) +
-    Math.abs(classes[len].s - color.s) +
-    Math.abs(classes[len].l - color.l);
-  if (distance < min) {
-    min = distance;
-    minIndex = len;
-  }
-}
-// 颜色所属的类别
-color.category = minIndex;
-```
-
-与某一个种子距离最小
-
-Note: 遍历像素，将其不断划分到初始种子的相关类别。
-
-~~
-
-## 性能优化
-
-<i class="ri-flask-line"></i>
-
-HEX 作为 key 会很慢（实测）
-
-```js
-hKey = Math.floor(hsl[0] / 10) * 10000;
-sKey = Math.floor(hsl[1] / 5) * 100;
-lKey = Math.floor(hsl[2] / 5);
-key = hKey + sKey + lKey;
-```
-
-使用 HSL 计算为整型索引
-
-Note: 差异明显
-
-~~
-
-## [达夫设备](https://zh.wikipedia.org/wiki/%E8%BE%BE%E5%A4%AB%E8%AE%BE%E5%A4%87)
-
-<i class="ri-thumb-up-line"></i>
-
-串行复制数据，每次迭代可赋值八次
-
-```js
-while (count--) {
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-  this.classifyColor(colors[--len], seeds);
-}
-```
-
-Note: 最早是 C 语言上用的。色彩像素很多，达夫设备在少量数据时并没有什么效果，但大量数据处理时的确有性能提升。
-
-~~
-
-## K-Means 信息
-
-### <i class="ri-node-tree"></i>
-
-- 记录过滤后的颜色 HSL RGB HEX
-- 所属分类
-- 按数量排序
-- 迭代次数与花费时间
-- 主色、平均色
-
-<i class="ri-information-line"></i>
-<i class="ri-folder-4-line"></i>
-<i class="ri-sort-desc"></i>
-<i class="ri-timer-line"></i>
-<i class="ri-numbers-line"></i>
-
-Note: HEX（十六进制颜色代码）、主色排名前三的色彩
-
-~~
-
-## 新的种子
-
-### <i class="ri-seedling-line"></i>
-
-```js
-const flag = hslCount.every((ele, index) => {
-  return (
-    Math.abs(ele.h - seeds[index].h) < 0.5 &&
-    Math.abs(ele.s - seeds[index].s) < 0.5 &&
-    Math.abs(ele.l - seeds[index].l) < 0.5
-  );
+<!DOCTYPE html><html lang="zh-CN"><head><!-- hexo injector head_begin start --><link href="https://cdn.jsdelivr.net/npm/hexo-tag-common@latest/css/index.css" rel="stylesheet"/><!-- hexo injector head_begin end --><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="theme-color" content="#0078E7"><meta name="author" content="2bW"><meta name="copyright" content="2bW"><meta name="generator" content="Hexo 5.3.0"><meta name="theme" content="hexo-theme-yun"><title>个人介绍 | 2bWant2b</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+XiaoWei&amp;display=swap" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/star-markdown-css@0.1.24/dist/yun/yun-markdown.min.css"><script src="//at.alicdn.com/t/font_1140697_ed8vp4atwoj.js" async></script><script src="https://cdn.jsdelivr.net/npm/scrollreveal/dist/scrollreveal.min.js" defer></script><script>document.addEventListener("DOMContentLoaded", () => {
+  [".post-card",".post-content img"].forEach((target)=> {
+    ScrollReveal().reveal(target);
+  })
 });
-...
-```
+</script><link id="light-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism.css" media="(prefers-color-scheme: light)"><link id="dark-prism-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@latest/themes/prism-tomorrow.css" media="(prefers-color-scheme: dark)"><link rel="shortcut icon" type="image/svg+xml" href="https://gitee.com/tzh363231879/picgo/raw/master/favicon.png"><link rel="mask-icon" href="https://gitee.com/tzh363231879/picgo/raw/master/favicon.png" color="#0078E7"><link rel="alternate icon" href="/yun.ico"><link rel="preload" href="/css/hexo-theme-yun.css" as="style"><link rel="preload" href="/js/utils.js" as="script"><link rel="preload" href="/js/hexo-theme-yun.js" as="script"><link rel="prefetch" href="/js/sidebar.js" as="script"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><script id="yun-config">
+    const Yun = window.Yun || {};
+    window.CONFIG = {"hostname":"2bwant2b.github.io","root":"/","title":"回忆と珍藏","version":"1.5.1","mode":"time","copycode":true,"page":{"isPost":false},"anonymous_image":"https://cdn.jsdelivr.net/gh/YunYouJun/cdn/img/avatar/none.jpg","say":{"api":"https://v1.hitokoto.cn","hitokoto":true},"local_search":{"path":"/search.xml"},"fireworks":{"colors":["255, 182, 193","255, 192, 203","255, 240, 245"]}};
+  </script><link rel="stylesheet" href="/css/hexo-theme-yun.css"><script src="/js/utils.js"></script><script src="/js/hexo-theme-yun.js"></script><script>CONFIG.leancloudVisitors = {"enable":true,"app_id":"P2B8WEYNUAQ0z68tTomJdPbP-MdYXbMMI","app_key":"iVlRH4IjcvkkJeAw7Eq2NuvU","server_url":"https://P2B8WEYN.api.lncldglobal.com"}</script><script defer src="/js/analytics/leancloud-visitors.js"></script><meta property="og:type" content="website">
+<meta property="og:title" content="个人介绍">
+<meta property="og:url" content="https://2bwant2b.github.io/about/index.html">
+<meta property="og:site_name" content="2bWant2b">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-02-21T13:35:17.000Z">
+<meta property="article:modified_time" content="2021-03-03T06:54:17.683Z">
+<meta property="article:author" content="2bW">
+<meta name="twitter:card" content="summary"><script src="/js/ui/mode.js"></script></head><body><script defer src="https://cdn.jsdelivr.net/npm/animejs@latest"></script><script defer src="/js/ui/fireworks.js"></script><canvas class="fireworks"></canvas><div class="container"><a class="sidebar-toggle hty-icon-button" id="menu-btn"><div class="hamburger hamburger--spin" type="button"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div></a><div class="sidebar-toggle sidebar-overlay"></div><aside class="sidebar"><script src="/js/sidebar.js"></script><div class="sidebar-panel sidebar-panel-active" id="site-overview-wrap"><div class="site-info"><a class="site-author-avatar" href="/about/" title="2bW"><img width="96" loading="lazy" src="https://gitee.com/tzh363231879/picgo/raw/master/393x393_可爱.gif" alt="2bW"><span class="site-author-status" title="未来的总是美好的，相信未来">😊</span></a><div class="site-author-name"><a href="/about/">2bW</a></div><a class="site-name" href="/about/site.html">2bWant2b</a><sub class="site-subtitle">个人博客</sub><div class="site-desciption"></div></div><nav class="site-state"><a class="site-state-item hty-icon-button icon-home" href="/" title="首页"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-home-4-line"></use></svg></span></a><div class="site-state-item"><a href="/archives/" title="归档"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-archive-line"></use></svg></span><span class="site-state-item-count">14</span></a></div><div class="site-state-item"><a href="/categories/" title="分类"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-folder-2-line"></use></svg></span><span class="site-state-item-count">3</span></a></div><div class="site-state-item"><a href="/tags/" title="标签"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-price-tag-3-line"></use></svg></span><span class="site-state-item-count">13</span></a></div><a class="site-state-item hty-icon-button" href="/bbs/" title="说说"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-open-arm-line"></use></svg></span></a></nav><hr style="margin-bottom:0.5rem"><div class="links-of-author"><a class="links-of-author-item hty-icon-button" rel="noopener" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=363231879&amp;website=www.oicqzone.com" title="QQ" target="_blank" style="color:#12B7F5"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-qq-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://github.com/2bWant2b" title="GitHub" target="_blank" style="color:#6e5494"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://music.163.com/#/user/home?id=249986987" title="网易云音乐" target="_blank" style="color:#C20C0C"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-netease-cloud-music-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://www.zhihu.com/people/2bwant2b/" title="知乎" target="_blank" style="color:#0084FF"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-zhihu-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://space.bilibili.com/494088975" title="bilibili" target="_blank" style="color:#FF8EB3"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bilibili-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="mailto:tzh363231879@163.com" title="E-Mail" target="_blank" style="color:#8E71C1"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-mail-line"></use></svg></a><a class="links-of-author-item hty-icon-button" rel="noopener" href="https://travellings.now.sh/" title="Travelling" target="_blank" style="color:var(--hty-text-color)"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-send-plane-2-line"></use></svg></a></div><hr style="margin:0.5rem 1rem"><div class="links"><a class="links-item hty-icon-button" href="/links/" title="链接" style="color:red"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-share-line"></use></svg></a></div><br><a class="links-item hty-icon-button" id="toggle-mode-btn" href="javascript:;" title="Mode" style="color: #f1cb64"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-contrast-2-line"></use></svg></a></div></aside><main class="sidebar-translate" id="content"><div class="hty-card" id="page"><header class="post-header"><h1 class="post-title" itemprop="name headline">个人介绍</h1></header><article id="page"><section class="post-body" itemprop="articleBody"><div class="post-content markdown-body"></div></section></article></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>留下你想说的话吧</span><br></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
+  const valineConfig = {"enable":true,"appId":"P2B8WEYNUAQ0z68tTomJdPbP-MdYXbMMI","appKey":"iVlRH4IjcvkkJeAw7Eq2NuvU","placeholder":"开始写吧","avatar":null,"pageSize":10,"visitor":false,"highlight":true,"recordIP":false,"enableQQ":true,"meta":["nick","mail","link"],"el":"#valine-container","lang":"zh-cn"}
+  valineConfig.path = window.location.pathname
+  new Valine(valineConfig)
+}, window.Valine);</script></div></main><footer class="sidebar-translate" id="footer"><div class="beian"><a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">湘ICP备2021002467号</a></div><div class="copyright"><span>&copy; 2021 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-heart-line"></use></svg></span><span class="author"> 2bW</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
+  setTimeout(blog_live_time, 1000);
+  const start = new Date('2021-02-03T08:05:20');
+  const now = new Date();
+  const timeDiff = (now.getTime() - start.getTime());
+  const msPerMinute = 60 * 1000;
+  const msPerHour = 60 * msPerMinute;
+  const msPerDay = 24 * msPerHour;
+  const passDay = Math.floor(timeDiff / msPerDay);
+  const passHour = Math.floor((timeDiff % msPerDay) / 60 / 60 / 1000);
+  const passMinute = Math.floor((timeDiff % msPerHour) / 60 / 1000);
+  const passSecond = Math.floor((timeDiff % msPerMinute) / 1000);
+  display_live_time.innerHTML = " " + passDay + " 天 " + passHour + " 小时 " + passMinute + " 分 " + passSecond + " 秒";
+}
+blog_live_time();
+</script></div><div id="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv" title="总访客量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-user-line"></use></svg></span><span id="busuanzi_value_site_uv"></span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv" title="总访问量"><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-eye-line"></use></svg></span><span id="busuanzi_value_site_pv"></span></span></div><div class="footer-custom-text"><a target="_blank" rel="noopener" href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="https://gitee.com/tzh363231879/picgo/raw/master/又拍云_logo5.png"align="absmiddle" width="59px" height="30px" /></a></div></footer><a class="hty-icon-button" id="goUp" aria-label="back-to-top" href="#"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-up-s-line"></use></svg><svg class="progress-circle-container" viewBox="0 0 100 100"><circle class="progress-circle" id="progressCircle" cx="50" cy="50" r="48" fill="none" stroke="#0078E7" stroke-width="2" stroke-linecap="round"></circle></svg></a><a class="popup-trigger hty-icon-button icon-search" id="search" href="javascript:;" title="搜索"><span class="site-state-item-icon"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-search-line"></use></svg></span></a><script>window.addEventListener("DOMContentLoaded", () => {
+  // Handle and trigger popup window
+  document.querySelector(".popup-trigger").addEventListener("click", () => {
+    document.querySelector(".popup").classList.add("show");
+    setTimeout(() => {
+      document.querySelector(".search-input").focus();
+    }, 100);
+  });
 
-计算真正的聚类种子
+  // Monitor main search box
+  const onPopupClose = () => {
+    document.querySelector(".popup").classList.remove("show");
+  };
 
-（聚类中附近的颜色差值最小）
+  document.querySelector(".popup-btn-close").addEventListener("click", () => {
+    onPopupClose();
+  });
 
----
-
-## 数据可视化
-
-开始
-
-<i class="ri-play-line"></i>
-
-Note: 想要的数据都拿到了，那么数据可视化开始。集中在一个页面，对同一数据源的不同表现形式。
-
-~~
-
-## K-Means 生成的簇色彩
-
-<i class="ri-palette-line"></i>
-
-可自由调节种子数量
-
-（太多影响性能）
-
-Note: 也就是刚刚最后生成的新种子
-
-~~
-
-## 主色
-
-<i class="ri-home-line"></i>
-
-取数量前三色彩生成渐变条
-
-```js
-background() {
-  if (this.colors.length > 1) {
-    let linearGradient = 'linear-gradient(to right'
-    this.colors.forEach((color) => {
-      linearGradient += ',' + color
-    })
-    linearGradient += ')'
-    return {
-      background: linearGradient,
+  window.addEventListener("keyup", event => {
+    if (event.key === "Escape") {
+      onPopupClose();
     }
-  } else {
-    ...
-  }
-}
-```
-
-~~
-
-## 平均色
-
-<i class="ri-calculator-line"></i>
-
-各色彩 RGB 数平均
-
-```js
-this.averageColor = rgbToHex({
-  r: Math.floor(rCount / fCount),
-  g: Math.floor(gCount / fCount),
-  b: Math.floor(bCount / fCount),
+  });
 });
-```
-
-~~
-
-## 绑定网站前后背景色
-
-Vue.js + Nuxt.js + Vuex + Vuetify
-
-存储状态树 + CSS 变量
-
-<i class="ri-vuejs-line"></i>
-<i class="ri-css3-line"></i>
-
-可切换亮暗/可交换前后背景色
-
-<i class="ri-contrast-drop-line"></i>
-<i class="ri-swap-line"></i>
-
-平均色 => 主色调 ｜ 色彩量最多 => 强调色
-
-~~
-
-## 数据信息
-
-- 色彩数量
-- 提取颜色花费时间
-- 迭代次数与 K-Means 算法时间
-- 色彩占比
-
-<i class="ri-numbers-line"></i>
-<i class="ri-timer-line"></i>
-<i class="ri-calculator-line"></i>
-<i class="ri-percent-line"></i>
-
-~~
-
-## 直方图
-
-### <i class="ri-bar-chart-2-line"></i>
-
-色彩数量与颜色十六进制
-
-自由设置绘制数量
-
-（按照色彩总数排序）
-
-Note: 直方条不留间隙，更方便颜色对比。
-
-~~
-
-## 饼图
-
-### <i class="ri-pie-chart-line"></i>
-
-色彩数量占比（灰色代表剩余色彩）
-
-自由设置绘制数量
-
-（按照色彩总数排序）
-
-~~
-
-## 力导向图
-
-<i class="ri-links-line"></i>
-
-最初的聚类中心点与相关聚类色彩
-
-Note: 意外的效果很不错
-
-~~
-
-## 词云
-
-<i class="ri-file-word-line"></i>
-
-十六进制颜色代码与对应颜色
-
-（根据最大最小缩放比例）
-
-点击复制颜色代码
-
-<i class="ri-clipboard-line"></i>
-<i class="ri-code-line"></i>
-
-~~
-
-## 气泡图
-
-<i class="ri-bubble-chart-line"></i>
-
-各色彩气泡
-
-（根据最大最小缩放比例）
-
-可切换刷新
-
-点击复制颜色代码
-
-<i class="ri-clipboard-line"></i>
-<i class="ri-code-line"></i>
-
----
-
-## 这就结束了
-
-<i class="ri-question-mark"></i>
-
-<i class="ri-stop-circle-line"></i>
-
-### NO
-
----
-
-## 最后一公里
-
-<i class="ri-run-line"></i>
-
-细节决定成败
-
-> 故不积跬步，无以至千里；  
-> 不积小流，无以成江海。  
-> —— 荀子 「劝学」
-
-~~
-
-## 调色盘
-
-<i class="ri-palette-line"></i>
-<i class="ri-bookmark-line"></i>
-
-在画布上绘制图片与聚类色彩
-
-<i class="ri-download-2-line"></i>
-
-~~
-
-## 亮暗判断
-
-<i class="ri-contrast-line"></i>
-
-灰度计算
-
-```js
-function isDark(color) {
-  color = hexToRgb(color);
-  return color.r * 0.299 + color.g * 0.578 + color.b * 0.114 <= 192;
-}
-```
-
-文字切换相反色
-
-~~
-
-## 国际化
-
-<i class="ri-translate-2"></i>
-
-中英翻译
-
-多图标少文字
-
-~~
-
-## 提示信息
-
-<i class="ri-chat-check-line" style="color:#4CAF50"></i>
-<i class="ri-chat-delete-line" style="color:#F44336"></i>
-
-点击复制直接色彩时，显示色彩提示信息
-
-未上传图片、链接时提示对应信息
-
-阴影与背景区分
-
-加载条
-
-<i class="ri-loader-line"></i>
-
-...
-
-~~
-
-## 配色字体
-
-<i class="ri-palette-line"></i>
-<i class="ri-font-color"></i>
-
-统一左边框卡片风格、多彩配色
-
-等宽字体 `Source Code Pro`，数字字母宽度一致
-
-阴影与背景区分
-
-<i class="ri-character-recognition-line"></i>
-
-~~
-
-## 工具类库
-
-<i class="ri-tools-line"></i>
-
-rgbToHsl, hslToRgb, rgbToHex, isDark, getHslKey
-
-封装复用
-
-Color Dust？ Yes!
-
-色彩提取和分类信息同样是一个可独立使用的包
-
-快速移植到任意网站
-
-<i class="ri-archive-line"></i>
-<i class="ri-global-line"></i>
-
-~~
-
-## PWA 与部署
-
-渐进式 Web 应用
-
-离线使用，一次加载长久缓存
-
-<i class="ri-wifi-off-line"></i>
-<i class="ri-flashlight-line"></i>
-
-部署（CDN）
-
-<i class="ri-cloud-line"></i>
-
----
-
-## 谢谢
-
-<i class="ri-emotion-line"></i>
-
-敬请老师和各位同学指正
-</script></section></div></div><script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script><script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.0.2/plugin/highlight/monokai.css"><script>document.addEventListener("DOMContentLoaded", function() {
-  const revealConfig = {"history":true,"mouseWheel":true}
-  revealConfig.plugins = [ RevealMarkdown, RevealNotes, RevealHighlight ]
-  Reveal.initialize(revealConfig);
-})</script><script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"display":{"position":"right"},"mobile":{"show":false},"model":{"scale":1,"jsonPath":"/live2d/assets/weier.model.json"},"dialog":{"enable":true},"log":false});</script></body></html>
+</script><script src="/js/search/local-search.js" defer></script><div class="popup search-popup"><div class="search-header"><span class="popup-btn-close close-icon hty-icon-button"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-close-line"></use></svg></span></div><div class="search-input-container"><input class="search-input" id="local-search-input" type="text" placeholder="搜索..." value=""></div><div id="local-search-result"></div></div><script>const date = new Date();
+const today = (date.getMonth() + 1) + "-" + date.getDate()
+const mourn_days = ["4-4","9-18"]
+if (mourn_days.includes(today)) {
+  document.documentElement.style.filter = "grayscale(1)";
+}</script></div><!-- hexo injector body_end start --><script src="https://cdn.jsdelivr.net/npm/hexo-tag-common@latest/js/index.js"></script><!-- hexo injector body_end end --><script src="/live2d/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2d/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"display":{"position":"right"},"mobile":{"show":false},"model":{"scale":1,"jsonPath":"/live2d/assets/weier.model.json"},"dialog":{"enable":true},"log":false});</script></body></html>
