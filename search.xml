@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>vscode启动时弹出powershell解决方案</title>
+      <link href="2021/03/07/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/vscode%E5%90%AF%E5%8A%A8%E6%97%B6%E5%BC%B9%E5%87%BApowershell%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>2021/03/07/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/vscode%E5%90%AF%E5%8A%A8%E6%97%B6%E5%BC%B9%E5%87%BApowershell%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题描述"><a class="markdownIt-Anchor" href="#问题描述">#</a> 问题描述</h2><p>某一天开始我的 vscode 打开时会莫名其妙的弹出两个 powershell 窗口，我试过更改 vscode 的 Terminal 配置，也在控制面板中禁用了 powershell2.0，可是都无效，后来我找到了以下可行的方法。</p><h2 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案">#</a> 解决方案</h2><p>打开 cmd，右击顶部栏选择 <strong>属性</strong> ，在 <strong>选项</strong> 中取消勾选 “使用旧版控制台”，这样打开 vscode 时就不会弹出窗口了。但是这样会造成 cmd 中文字看不见，这时我们需要在 <strong>终端</strong> 中取消勾选 “使用单独的前景”，光标颜色选择 “反转颜色”，这样就解决了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 问题解决 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>键盘无法切换页面的解决办法</title>
       <link href="2021/03/04/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E9%94%AE%E7%9B%98%E6%97%A0%E6%B3%95%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
       <url>2021/03/04/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E9%94%AE%E7%9B%98%E6%97%A0%E6%B3%95%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
@@ -58,7 +83,7 @@
       <link href="2021/02/28/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%82%A3%E4%BA%9B%E9%9A%BE%E8%AE%B0%E7%9A%84%E5%8D%95%E8%AF%8D/"/>
       <url>2021/02/28/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%82%A3%E4%BA%9B%E9%9A%BE%E8%AE%B0%E7%9A%84%E5%8D%95%E8%AF%8D/</url>
       
-        <content type="html"><![CDATA[<p>panel<br>n. 专题讨论小组，委员会；镶板，嵌板；玻璃片；仪表板，控制板</p><p>fusion<br>n. 联合，合并；核聚变</p><p>furthermore 而且</p><p>fuse<br>v. 结合，融合，熔化</p><p>specific<br>adj. 明确的，确切的；具体的；特定的，特有的；</p><p>pursue<br>v. 追求，寻求，达到目标；从事，忙于活动；实行，采取；沿着小路前进，延伸</p><p>hound<br>v. 纠缠，不断骚扰<br> n. 猎犬；猎狗</p><p>plot<br>n. 情节；小块地，苗圃；阴谋<br> v. 密谋，策划，计划（有害的活动）</p><p>tender<br>adj. 柔软的；脆弱的，易碎的；和善的，温柔的；年轻的；微妙的，棘手的<br> v. 投标；提供；提出；交付<br> n. 投标；提出，提议；交付</p><p>render<br>v. 致使，造成；给予，提供</p><p>evacuate<br>v. 撤离，撤出；排空排泄</p><p>suite<br>n. 套间；一套家具；（同类物的）套，组，系列</p><p>consultative<br>adj. 咨询的，顾问的</p><p>board<br>n. 膳食，伙食；委员会，理事会，董事会；舞台；长方形板<br> v. 登（交通工具）；寄宿</p><p>drain<br>v. 耗尽；排出，排干；喝光；使精疲力竭<br> n. 下水道；流失，外流，消耗</p><p>collapse<br>v. 突然失败；崩溃；倒闭；昏倒；价格突然下跌；货币突然贬值<br> n. 倒塌；突然倒闭；崩溃；瓦解</p><p>alongside<br>prep. 同时，共存；与… 一起，在… 旁边，与… 合作</p><p>abort<br>v. 中止，流产，堕胎</p><p>resolve<br>v. 决定，决心；解决<br> n. 解决，解答；决心</p><p>sheer<br>adj. 纯粹的，完全的，十足的（用于强调）；垂直的，陡峭的；<br>v. 突然变向<br> adv. 垂直地，陡峭地</p><p>withhold<br>v. 拒绝，不给；使停止，阻挡；隐瞒；克制；抑制</p><p>lottery<br>n. 抽彩票中奖；抽签；碰运气的事</p><p>ail<br>v. 困扰，干扰；使麻烦，使患病</p><p>supplementary<br>adj. 增补的，补充的</p><p>meticulous<br>adj. 细心的，小心翼翼的</p><p>withhold<br>v. 拒绝，不给；使停止，阻挡；隐瞒；克制，抑制</p><p>outrage<br>n. 义愤，愤慨；暴行，害人听闻的事件<br> vt. 激起… 的义愤，激怒</p><p>humiliate<br>v. 羞辱，使丧失尊严</p><p>mentality<br>n.（常贬）心态，心性；思想方法</p><p>establishment<br>n. 成立，建立；企业；公共机构；家庭；权威派</p><p>slot<br>n.（投放或插入东西的）窄缝；槽沟；位置，职位；（广播节目等的）一档；停车空位；足迹踪迹<br> v. 插入；被塞进；把… 排入；把… 纳入；占有位置；跟踪</p><p>stray<br>v. 迷路，走失；偏离正题；走神<br> adj. 走失的；零星的<br> n. 离群者；走散者；走失的宠物或家畜</p><p>peculiar<br>adj. 奇怪的，古怪的；特殊的，独特的</p><p>stale<br>adj.（食物）不新鲜的；变硬的；发霉的；干的；（空气）污浊的；（烟味）难闻的；（人）疲软的；失去创造力的；陈旧的；不再有趣的；不再有激情的<br> n. 笑柄<br> v. 使陈旧，使没有味道，用坏</p><p>staple<br>adj. 主要的，重要的；经常需要或使用的<br> vt. 用订书钉订<br> n. 订书钉；主食；主要产品<br> stapler<br>n. 订书机</p><p>bead<br>vt. 用小珠装饰<br> n. 珠子；（液体）小滴，小珠<br> vt. 形成珠状，起泡</p><p>slot<br>n.（投放或插入东西的）窄缝；槽沟；狭槽；位置；职位；（广播节目等的）一档；停车空位；足迹，踪迹<br> v. 插入；被塞进；把… 排入；把… 纳入；占有位置；跟踪</p><p>frustration<br>n. 沮丧，受挫，挫败，懊丧</p><p>drift<br>v. 漂流；漂泊；慢慢移动；进入某种状态<br> n. 漂流，移动</p><p>eligible<br>adj. 有资格的；合格的，符合条件的</p><p>supremacy<br>n. 至高无上，最大权力，最高权威，最高地位</p><p>ail<br>v. 困扰，干扰；使患病</p><p>wrap<br>v. 包；裹；覆盖；抱；围住<br> n. 披肩；围巾；保鲜膜；饺子皮</p><p>wipe<br>v. 擦拭</p><p>clearing<br>n. 林中空地；结算</p><p>idiomatic<br>adj. 表达方式地道的</p><p>respective<br>adj. 各自的，各个的，分别的</p><p>jury<br>n. 陪审团，评奖团</p><p>logistical<br>adj. 后勤的；逻辑的</p><p>audit<br>n. 审计<br> v. 审计，检查</p>]]></content>
+        <content type="html"><![CDATA[<p>panel<br>n. 专题讨论小组，委员会；镶板，嵌板；玻璃片；仪表板，控制板</p><p>fusion<br>n. 联合，合并；核聚变</p><p>furthermore 而且</p><p>fuse<br>v. 结合，融合，熔化</p><p>specific<br>adj. 明确的，确切的；具体的；特定的，特有的；</p><p>pursue<br>v. 追求，寻求，达到目标；从事，忙于活动；实行，采取；沿着小路前进，延伸</p><p>hound<br>v. 纠缠，不断骚扰<br> n. 猎犬；猎狗</p><p>plot<br>n. 情节；小块地，苗圃；阴谋<br> v. 密谋，策划，计划（有害的活动）</p><p>tender<br>adj. 柔软的；脆弱的，易碎的；和善的，温柔的；年轻的；微妙的，棘手的<br> v. 投标；提供；提出；交付<br> n. 投标；提出，提议；交付</p><p>render<br>v. 致使，造成；给予，提供</p><p>evacuate<br>v. 撤离，撤出；排空排泄</p><p>suite<br>n. 套间；一套家具；（同类物的）套，组，系列</p><p>consultative<br>adj. 咨询的，顾问的</p><p>board<br>n. 膳食，伙食；委员会，理事会，董事会；舞台；长方形板<br> v. 登（交通工具）；寄宿</p><p>drain<br>v. 耗尽；排出，排干；喝光；使精疲力竭<br> n. 下水道；流失，外流，消耗</p><p>collapse<br>v. 突然失败；崩溃；倒闭；昏倒；价格突然下跌；货币突然贬值<br> n. 倒塌；突然倒闭；崩溃；瓦解</p><p>alongside<br>prep. 同时，共存；与… 一起，在… 旁边，与… 合作</p><p>abort<br>v. 中止，流产，堕胎</p><p>resolve<br>v. 决定，决心；解决<br> n. 解决，解答；决心</p><p>sheer<br>adj. 纯粹的，完全的，十足的（用于强调）；垂直的，陡峭的；<br>v. 突然变向<br> adv. 垂直地，陡峭地</p><p>withhold<br>v. 拒绝，不给；使停止，阻挡；隐瞒；克制；抑制</p><p>lottery<br>n. 抽彩票中奖；抽签；碰运气的事</p><p>ail<br>v. 困扰，干扰；使麻烦，使患病</p><p>supplementary<br>adj. 增补的，补充的</p><p>meticulous<br>adj. 细心的，小心翼翼的</p><p>withhold<br>v. 拒绝，不给；使停止，阻挡；隐瞒；克制，抑制</p><p>outrage<br>n. 义愤，愤慨；暴行，害人听闻的事件<br> vt. 激起… 的义愤，激怒</p><p>humiliate<br>v. 羞辱，使丧失尊严</p><p>mentality<br>n.（常贬）心态，心性；思想方法</p><p>establishment<br>n. 成立，建立；企业；公共机构；家庭；权威派</p><p>slot<br>n.（投放或插入东西的）窄缝；槽沟；位置，职位；（广播节目等的）一档；停车空位；足迹踪迹<br> v. 插入；被塞进；把… 排入；把… 纳入；占有位置；跟踪</p><p>stray<br>v. 迷路，走失；偏离正题；走神<br> adj. 走失的；零星的<br> n. 离群者；走散者；走失的宠物或家畜</p><p>peculiar<br>adj. 奇怪的，古怪的；特殊的，独特的</p><p>stale<br>adj.（食物）不新鲜的；变硬的；发霉的；干的；（空气）污浊的；（烟味）难闻的；（人）疲软的；失去创造力的；陈旧的；不再有趣的；不再有激情的<br> n. 笑柄<br> v. 使陈旧，使没有味道，用坏</p><p>staple<br>adj. 主要的，重要的；经常需要或使用的<br> vt. 用订书钉订<br> n. 订书钉；主食；主要产品<br> stapler<br>n. 订书机</p><p>bead<br>vt. 用小珠装饰<br> n. 珠子；（液体）小滴，小珠<br> vt. 形成珠状，起泡</p><p>slot<br>n.（投放或插入东西的）窄缝；槽沟；狭槽；位置；职位；（广播节目等的）一档；停车空位；足迹，踪迹<br> v. 插入；被塞进；把… 排入；把… 纳入；占有位置；跟踪</p><p>frustration<br>n. 沮丧，受挫，挫败，懊丧</p><p>drift<br>v. 漂流；漂泊；慢慢移动；进入某种状态<br> n. 漂流，移动</p><p>eligible<br>adj. 有资格的；合格的，符合条件的</p><p>supremacy<br>n. 至高无上，最大权力，最高权威，最高地位</p><p>ail<br>v. 困扰，干扰；使患病</p><p>wrap<br>v. 包；裹；覆盖；抱；围住<br> n. 披肩；围巾；保鲜膜；饺子皮</p><p>wipe<br>v. 擦拭</p><p>clearing<br>n. 林中空地；结算</p><p>idiomatic<br>adj. 表达方式地道的</p><p>respective<br>adj. 各自的，各个的，分别的</p><p>jury<br>n. 陪审团，评奖团</p><p>logistical<br>adj. 后勤的；逻辑的</p><p>audit<br>n. 审计<br> v. 审计，检查</p><p>mandatory<br>adj. 强制的，法定的，义务的</p><p>authenticity<br>n. 真实性，确实性</p><p>duly<br>adv. 适时地，适当地，恰当地，按时地</p><p>founding<br>n. 建立，成立<br> adj. 成立的；创办的；建立的</p><p>fund<br>n. 基金</p><p>perceptive<br>adj. 理解力强的，有洞察力的，思维敏捷的，感知的</p><p>meticulous<br>adj. 细心的，小心翼翼的</p>]]></content>
       
       
       <categories>
