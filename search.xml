@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Git使用教程</title>
+      <link href="2021/04/04/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/"/>
+      <url>2021/04/04/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="图解"><a class="markdownIt-Anchor" href="#图解">#</a> 图解</h2><p><img src="https://gitee.com/tzh363231879/picgo/raw/master/git.png" alt="git" loading="lazy"></p><p>工作区就是你电脑文件夹中的所有东西（除了.git 文件外），<strong>.git</strong> 文件就是版本库。</p><h2 id="一些基本操作"><a class="markdownIt-Anchor" href="#一些基本操作">#</a> 一些基本操作</h2><p><code>$ mkdir filefoldername</code>  创建一个文件夹 <strong>filefoldername</strong><br> <code>$ cd filefoldername</code>  进入该文件夹<br> <code>$ pwd</code>  查看当前目录<br> <code>$ cd D:</code>  进入 D 盘<br> <code>dir</code>  查看当前目录下各个文件夹名称</p><h2 id="配置所有git仓库的用户名和email"><a class="markdownIt-Anchor" href="#配置所有git仓库的用户名和email">#</a> 配置所有 Git 仓库的用户名和 email</h2><pre class="line-numbers language-none"><code class="language-none">$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;youremail@example.com&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="创建版本库"><a class="markdownIt-Anchor" href="#创建版本库">#</a> 创建版本库</h2><p><code>$ git init</code> ，版本库文件不要随意改动，一切以代码操作</p><h2 id="添加文件到暂存区"><a class="markdownIt-Anchor" href="#添加文件到暂存区">#</a> 添加文件到暂存区</h2><p><code>$ git add readme.txt</code> ，注意文件 <code>readme.txt</code>  是与版本库在同一文件夹下的<br> <code>$ git add .</code> ，添加工作区所有文件添加到暂存区</p><h2 id="将暂存区文件提交到当前分支"><a class="markdownIt-Anchor" href="#将暂存区文件提交到当前分支">#</a> 将暂存区文件提交到当前分支</h2><pre class="line-numbers language-none"><code class="language-none">$ git commit -m &quot;你需要备注的提交信息&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><blockquote><p>提交到分支可以是多个文件一起操作，一行代码即可</p></blockquote><h2 id="远程推送"><a class="markdownIt-Anchor" href="#远程推送">#</a> 远程推送</h2><p>SSH 秘钥已连接，这里不再赘述</p><h3 id="已存在本地仓库"><a class="markdownIt-Anchor" href="#已存在本地仓库">#</a> 已存在本地仓库</h3><pre class="line-numbers language-none"><code class="language-none">$ git remote add origin git@github.com:yourname&#x2F;reponame.git$ git branch -M main$ git push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><blockquote><p><code>remote add origin</code>  的意思是关联一个远程仓库，起名为默认的 <code>origin</code> ，然后推送到远程仓库的默认分支 <code>main</code> （本地仓库默认好像是 master）。第三行代码是第一次推送本地仓库 <code>main</code>  分支的所有内容，此后每次本地提交后，就可以使用命令 <code>$ git push origin main</code>  推送最新修改了。</p></blockquote><h3 id="未创建本地仓库"><a class="markdownIt-Anchor" href="#未创建本地仓库">#</a> 未创建本地仓库</h3><pre class="line-numbers language-none"><code class="language-none">$ git init$ git add .$ git commit -m &quot;first commit&quot;$ git branch -M main$ git remote add origin git@github.com:yourname&#x2F;reponame.git$ git push -u origin main<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><blockquote><p>无非就是先创建本地仓库再推送</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>随机信号 第二章</title>
       <link href="2021/04/03/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7-%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
       <url>2021/04/03/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E9%9A%8F%E6%9C%BA%E4%BF%A1%E5%8F%B7-%E7%AC%AC%E4%BA%8C%E7%AB%A0/</url>
