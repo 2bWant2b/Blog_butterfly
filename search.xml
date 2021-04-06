@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Git Error fatal  invalid branch name init.defaultBranch</title>
+      <link href="2021/04/06/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git-Error-%E2%80%9Cfatal-invalid-branch-name-init-defaultBranch-%E2%80%9D/"/>
+      <url>2021/04/06/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git-Error-%E2%80%9Cfatal-invalid-branch-name-init-defaultBranch-%E2%80%9D/</url>
+      
+        <content type="html"><![CDATA[<h2 id="问题描述"><a class="markdownIt-Anchor" href="#问题描述">#</a> 问题描述</h2><p>今天在 Github 上拉取一个项目的时候， <code>git clone</code>  会报上面的错误，大致意思好像就是默认的分支名不对，应该是与 <code>main</code>  和 <code>master</code>  相关，Git 改了默认分支</p><h2 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法">#</a> 解决方法</h2><p>输入代码 <code>git config --global init.defaultBranch main</code>  改变默认分支为 <code>main</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>信息论与编码 第二章</title>
       <link href="2021/04/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%AB%A0/"/>
       <url>2021/04/05/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E4%BF%A1%E6%81%AF%E8%AE%BA%E4%B8%8E%E7%BC%96%E7%A0%81-%E7%AC%AC%E4%BA%8C%E7%AB%A0/</url>
