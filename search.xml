@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>关闭vscode单词检查</title>
+      <link href="2021/04/07/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%85%B3%E9%97%ADvscode%E5%8D%95%E8%AF%8D%E6%A3%80%E6%9F%A5/"/>
+      <url>2021/04/07/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%85%B3%E9%97%ADvscode%E5%8D%95%E8%AF%8D%E6%A3%80%E6%9F%A5/</url>
+      
+        <content type="html"><![CDATA[<h2 id="why"><a class="markdownIt-Anchor" href="#why">#</a> WHY</h2><p>大家都知道代码审查功能很重要，编辑器或 IDE 可以给你纠错。但是单词拼写还检查那就很郁闷了，取个变量名两个单词小写连在一起都给你报下划线，多此一举看着很烦</p><h2 id="how"><a class="markdownIt-Anchor" href="#how">#</a> HOW</h2><ol><li>打开 <code>Settings</code></li><li>搜索 <code>cspell</code></li><li>勾选 <code>C Spell:Allow Compound Words</code></li></ol><p>现在就可以在没有语法错误的情况下任意输入字符而不提示你了。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发文档 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vscode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git Error fatal  invalid branch name init.defaultBranch</title>
       <link href="2021/04/06/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git-Error-%E2%80%9Cfatal-invalid-branch-name-init-defaultBranch-%E2%80%9D/"/>
       <url>2021/04/06/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/Git-Error-%E2%80%9Cfatal-invalid-branch-name-init-defaultBranch-%E2%80%9D/</url>
