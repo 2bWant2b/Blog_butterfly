@@ -23,7 +23,7 @@
 <p>subplot:在平铺位置创建坐标区；<br>
 stem:绘制离散序列数据.</p>
 <h2 id="ones函数">ones函数</h2>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; ones(3)
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; ones(3)
 
 ans &#x3D;
 
@@ -35,10 +35,10 @@ ans &#x3D;
 
 ans &#x3D;
 
-     1     1     1     1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     1     1     1     1</code></pre>
 <h2 id="size函数">size函数</h2>
 <p>①输出行数和列数</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;4,5,6;7,8,9]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;4,5,6;7,8,9]
 
 x &#x3D;
 
@@ -50,9 +50,9 @@ x &#x3D;
 
 ans &#x3D;
 
-     3     3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     3     3</code></pre>
 <p>①指定输入行数和列数</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;4,5,6;7,8,9;10,0,0]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;4,5,6;7,8,9;10,0,0]
 
 x &#x3D;
 
@@ -71,11 +71,11 @@ ans &#x3D;
 
 ans &#x3D;
 
-     3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     3</code></pre>
 <h2 id="unique函数">unique函数</h2>
 <p>uniqueA:返回的是和A中一样值，但是没有重复元素；产生的结果向量按升序排列。<br>
 ①A是向量</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,6,3,7,1,1]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,6,3,7,1,1]
 
 x &#x3D;
 
@@ -85,9 +85,9 @@ x &#x3D;
 
 ans &#x3D;
 
-     1     2     3     6     7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     1     2     3     6     7</code></pre>
 <p>②A是数组</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[11,12,41,14;21,31,45,64;75,43,35,76;11,12,41,14]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[11,12,41,14;21,31,45,64;75,43,35,76;11,12,41,14]
 
 x &#x3D;
 
@@ -111,11 +111,11 @@ ans &#x3D;
     45
     64
     75
-    76<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    76</code></pre>
 <h2 id="length函数">length函数</h2>
 <p>lengthA<br>
 ① 如果A是向量，则返回向量中数据的个数：</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,1,4,5,6,6,4,7,8,2]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,1,4,5,6,6,4,7,8,2]
 
 x &#x3D;
 
@@ -125,9 +125,9 @@ x &#x3D;
 
 ans &#x3D;
 
-    12<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    12</code></pre>
 <p>②如果A是数组，则返回行数和列数最大的那个值：</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,4;1,2,3,4;1,2,3,4]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,4;1,2,3,4;1,2,3,4]
 
 x &#x3D;
 
@@ -139,10 +139,10 @@ x &#x3D;
 
 ans &#x3D;
 
-     4<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     4</code></pre>
 <h2 id="cell函数">cell函数</h2>
 <p>定义一个数组</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; cell(3,2)
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; cell(3,2)
 
 ans &#x3D;
 
@@ -150,10 +150,10 @@ ans &#x3D;
 
     &amp;#123;0×0 double&amp;#125;    &amp;#123;0×0 double&amp;#125;
     &amp;#123;0×0 double&amp;#125;    &amp;#123;0×0 double&amp;#125;
-    &amp;#123;0×0 double&amp;#125;    &amp;#123;0×0 double&amp;#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    &amp;#123;0×0 double&amp;#125;    &amp;#123;0×0 double&amp;#125;</code></pre>
 <h2 id="zeros函数">zeros函数</h2>
 <p>创建零矩阵</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; zeros(3)
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; zeros(3)
 
 ans &#x3D;
 
@@ -181,10 +181,10 @@ ans(:,:,3) &#x3D;
 
      0     0     0
      0     0     0
-     0     0     0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     0     0     0</code></pre>
 <h2 id="trace函数">trace函数</h2>
 <p>求矩阵的<strong>迹</strong></p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;1,2,3;1,2,3]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3;1,2,3;1,2,3]
 
 x &#x3D;
 
@@ -196,12 +196,12 @@ x &#x3D;
 
 ans &#x3D;
 
-     6<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     6</code></pre>
 <h2 id="mean函数">mean函数</h2>
 <p>求平均值<br>
 ①.meanx：求数组x每列的平均值，等同于meanx,1<br>
 ② meanx,2：求数组x每行的平均值</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,4;1,2,3,4;1,2,3,4;1,2,3,4]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,2,3,4;1,2,3,4;1,2,3,4;1,2,3,4]
 
 x &#x3D;
 
@@ -229,10 +229,10 @@ ans &#x3D;
     2.5000
     2.5000
     2.5000
-    2.5000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    2.5000</code></pre>
 <h2 id="eig函数">eig函数</h2>
 <p>计算矩阵的<strong>特征值</strong>和<strong>特征向量</strong></p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; [a.b]&#x3D;eig(x)
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; [a.b]&#x3D;eig(x)
 
 a &#x3D; 
 
@@ -255,10 +255,10 @@ E &#x3D;
 
   356.0000
     0.0000
-   -0.0000<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   -0.0000</code></pre>
 <h2 id="diag函数">diag函数</h2>
 <p>把向量的元素作为矩阵的对角线元素</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; a&#x3D;[1,2,3]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; a&#x3D;[1,2,3]
 
 a &#x3D;
 
@@ -270,10 +270,10 @@ x &#x3D;
 
      1     0     0
      0     2     0
-     0     0     3<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     0     0     3</code></pre>
 <h2 id="sort函数">sort函数</h2>
 <p>对数组和向量进行排序（默认升序）</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt;  A&#x3D;[3,33,333;1,11,111;2,22,222]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt;  A&#x3D;[3,33,333;1,11,111;2,22,222]
 
 A &#x3D;
 
@@ -295,13 +295,13 @@ ans &#x3D;
 
      3    33   333
      2    22   222
-     1    11   111<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     1    11   111</code></pre>
 <h2 id="var函数">var函数</h2>
 <p>求方差<br>
 ①.V=var(A) 返回A中第一个数组维度的元素的方差。<br>
 ②.V=var(A,w) 指定<strong>权重方案</strong>，若w = 0（默认），则V按观测值数量-1实现归一化；若w = 1，则V按观测值数量值实现归一化。<br>
 ③.V=var(A,w,dim)返回沿维度dim的方差。</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; A&#x3D;[1,2,1;2,3,2;3,4,3]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; A&#x3D;[1,2,1;2,3,2;3,4,3]
 
 A &#x3D;
 
@@ -327,10 +327,10 @@ ans &#x3D;
 
     0.2222
     0.2222
-    0.2222<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    0.2222</code></pre>
 <h2 id="log函数">log函数</h2>
 <p>求对数</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; A&#x3D;[1,2,1;2,3,2;3,4,3]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; A&#x3D;[1,2,1;2,3,2;3,4,3]
 
 A &#x3D;
 
@@ -344,10 +344,10 @@ ans &#x3D;
 
          0    0.6931         0
     0.6931    1.0986    0.6931
-    1.0986    1.3863    1.0986<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    1.0986    1.3863    1.0986</code></pre>
 <h2 id="ismember函数">ismember函数</h2>
 <p>判断某个元素是不是在集合数组中</p>
-<pre class="line-numbers language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,3,2,5,7]
+<pre class="language-Matlab" data-language="Matlab"><code class="language-Matlab">&gt;&gt; x&#x3D;[1,3,2,5,7]
 
 x &#x3D;
 
@@ -367,38 +367,38 @@ ans &#x3D;
 
   logical
 
-   0<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+   0</code></pre>
 <h2 id="unifrnd函数">unifrnd函数</h2>
 <p>unifrnd可以创建随机的连续均匀分布的数组，调用格式R = unifrnd(A,B,m,n)</p>
 <ol>
 <li>若A，B为一个数，则可以通过m,n指定生成矩阵的大小</li>
 </ol>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
 B<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
+<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
 
     <span class="token number">1.4899</span>    <span class="token number">1.9787</span>    <span class="token number">1.5005</span>
-    <span class="token number">1.1679</span>    <span class="token number">1.7127</span>    <span class="token number">1.4711</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token number">1.1679</span>    <span class="token number">1.7127</span>    <span class="token number">1.4711</span></code></pre>
 <ol start="2">
 <li>若A为一个数，B为数组，则无法指定生成矩阵大小，以A为下界B中的元素为上界生成随机数</li>
 </ol>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>
 B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
+<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span></code></pre>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
 
-       <span class="token keyword">NaN</span>    <span class="token number">1.0967</span>    <span class="token number">3.4544</span>    <span class="token number">5.0877</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+       <span class="token keyword">NaN</span>    <span class="token number">1.0967</span>    <span class="token number">3.4544</span>    <span class="token number">5.0877</span></code></pre>
 <ol start="3">
 <li>若A，B都为数组，则要求这两个数组的维数一致，生成随机数规则同上</li>
 </ol>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">2</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">A<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span> <span class="token number">2</span> <span class="token number">4</span> <span class="token number">6</span><span class="token punctuation">;</span><span class="token number">2</span> <span class="token number">1</span> <span class="token number">4</span> <span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
 B<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span> <span class="token number">3</span> <span class="token number">6</span> <span class="token number">11</span><span class="token punctuation">;</span><span class="token number">3</span> <span class="token number">6</span> <span class="token number">8</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
+<span class="token function">unifrnd</span><span class="token punctuation">(</span>A<span class="token punctuation">,</span>B<span class="token punctuation">)</span></code></pre>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">ans <span class="token operator">=</span>
 
     <span class="token number">0.4324</span>    <span class="token number">2.0835</span>    <span class="token number">4.3468</span>   <span class="token number">10.1569</span>
-    <span class="token number">2.8253</span>    <span class="token number">1.6659</span>    <span class="token number">5.5638</span>    <span class="token number">4.4101</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token number">2.8253</span>    <span class="token number">1.6659</span>    <span class="token number">5.5638</span>    <span class="token number">4.4101</span></code></pre>
 <h2 id="poissrnd函数">poissrnd函数</h2>
 <p>r = poissrnd(lambda)<br>
 r = poissrnd(lambda,sz1,…,szN)<br>
@@ -407,15 +407,15 @@ r = poissrnd(lambda,[sz1,…,szN])<br>
 <ol>
 <li>若只输入 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">{\lambda}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal">λ</span></span></span></span></span> 为单个数</li>
 </ol>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span> <span class="token function">poissrnd</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span> <span class="token function">poissrnd</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span>
 
-     <span class="token number">6</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+     <span class="token number">6</span></code></pre>
 <ol start="2">
 <li>若后面输入的是矩阵或者是一串参数，前两个参数是单元矩阵的维数，后面的参数是高维次</li>
 </ol>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span> <span class="token function">poissrnd</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<pre class="line-numbers language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">r_array</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab">r_array <span class="token operator">=</span> <span class="token function">poissrnd</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span></code></pre>
+<pre class="language-matlab" data-language="matlab"><code class="language-matlab"><span class="token function">r_array</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">=</span>
 
      <span class="token number">6</span>     <span class="token number">5</span>
      <span class="token number">5</span>     <span class="token number">4</span>
@@ -430,7 +430,7 @@ r = poissrnd(lambda,[sz1,…,szN])<br>
 <span class="token function">r_array</span><span class="token punctuation">(</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token operator">:</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">=</span>
 
     <span class="token number">10</span>    <span class="token number">11</span>
-     <span class="token number">6</span>     <span class="token number">3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+     <span class="token number">6</span>     <span class="token number">3</span></code></pre>
 <h2 id="polyarea">polyarea</h2>
 <p>计算多边形面积</p>
 </div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="打赏" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">「真诚赞赏，手留余香」</div><div id="qr" style="display:none;"><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://gitee.com/tzh363231879/picgo/raw/master/支付宝.jpg"><img loading="lazy" src="https://gitee.com/tzh363231879/picgo/raw/master/支付宝.jpg" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a target="_blank" rel="noopener" href="https://gitee.com/tzh363231879/picgo/raw/master/微信.png"><img loading="lazy" src="https://gitee.com/tzh363231879/picgo/raw/master/微信.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>本文作者：</strong>2bW</li><li class="post-copyright-link"><strong>本文链接：</strong><a href="https://2bwant2b.github.io/2021/02/04/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/MATLAB%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/" title="MATLAB常用函数的用法">https://2bwant2b.github.io/2021/02/04/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/MATLAB%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E7%9A%84%E7%94%A8%E6%B3%95/</a></li><li class="post-copyright-license"><strong>版权声明：</strong>本博客所有文章除特别声明外，均默认采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> 许可协议。</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2021/02/04/%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3/%E5%8D%9A%E5%AE%A2%E5%BC%80%E5%8F%91%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" rel="prev" title="博客搭建疑难杂症"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">博客搭建疑难杂症</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2021/02/03/%E5%88%9B%E4%BD%9C%E9%9A%8F%E7%AC%94/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/" rel="next" title="我的第一篇博客文章"><span class="post-nav-text">我的第一篇博客文章</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div></div><div class="hty-card" id="comment"><div class="comment-tooltip text-center"><span>留下你想说的话吧</span><br></div><div id="valine-container"></div><script>Yun.utils.getScript("https://cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js", () => {
